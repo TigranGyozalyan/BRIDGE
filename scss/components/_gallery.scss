@@ -1,0 +1,68 @@
+.gallery {
+  min-height: 250px;
+  position: relative;
+
+
+  @media only screen and (max-width: 768px) {
+    min-width: 250px;
+    border: 1px solid $light-gray;
+  }
+}
+
+.gallery-img {
+
+  > img,
+  > a > img {
+    left: 0;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -1;
+  } 
+}
+
+%quote {
+  font-size: 120px;
+  position: absolute;
+  color: lightgray;
+  z-index: -1;
+  opacity: 0.25;
+}
+
+.gallery-quote {
+
+  &::before {
+    @extend %quote;
+    content: open-quote;
+    top: 33%;
+    left: 5%;
+  }
+
+  &::after {
+    @extend %quote;
+    content: close-quote;
+    right: 5%;
+    bottom: 5%;
+  }
+}
+
+.gallery-caption {
+  overflow: hidden;
+  transition: filter 500ms cubic-bezier(0.31, 0.01, 0.71, 0.54) 400ms;
+
+  > p {
+    padding: 1.2rem 0.5rem;
+    bottom: -100%;
+    transition: bottom 750ms cubic-bezier(0.31, 0.01, 0.71, 0.54) 400ms;
+  }
+
+  &:hover {
+    filter: grayscale(0);
+
+    > p {
+      bottom: 0;
+    }
+  }
+}

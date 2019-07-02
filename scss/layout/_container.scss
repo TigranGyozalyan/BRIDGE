@@ -1,0 +1,12 @@
+.container {
+  width: 75%; 
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: $default-padding;
+  padding-left: $default-padding;
+
+  ul {
+
+    > li { padding-top: 4px; }
+  }
+}

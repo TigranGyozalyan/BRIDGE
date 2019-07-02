@@ -1,0 +1,86 @@
+%btn {
+  outline: none;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-small {
+  @extend %btn;
+  border-radius: 4px;
+  padding: 6px 16px;
+}
+
+.btn-medium {
+  @extend %btn;
+  border-radius: 3px;
+  padding: 8px 14px;
+}
+
+.btn-big {
+  @extend %btn;
+  border-radius: 40px;
+  padding: 12px 48px;
+  font-size: 18px;
+}
+
+.btn-white {
+  background-color: #ffffff;
+  color: black;
+
+  &:hover {
+    background-color: #6b6b6b;
+    color: white;
+  }
+}
+
+.btn-gray {
+  background-color: $gray;
+  color: $light-gray;
+
+  &:hover {
+    background-color: black;
+    color: white; 
+  }
+}
+
+.btn-black {
+  background-color: black;
+  color: white;
+
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+}
+
+.btn-link {
+    display: inline-block;
+    padding: 5px 12px;
+    background-color: black;
+    position: relative;
+    z-index: 3;
+}
+
+.btn-with-page {
+  position: relative;
+  z-index: 2;
+  &:after {
+    position: absolute;
+    content: '';
+    top: -25px;
+    left: -18px;
+    background-color: white;
+    z-index: 1;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: -15px;
+    left: -17px;
+    background-color: white;
+    z-index: 1;
+    width: 35px;
+    height: 50px;
+  }
+}

@@ -1,0 +1,56 @@
+.skills {
+  list-style: none;
+  max-width: 100%;
+  max-height: 400px;
+  counter-reset: li;
+
+    > li {
+    counter-increment: my-counter;
+    
+    a {
+      white-space: wrap;
+      padding-left: 4px;
+      display: block;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:nth-child(1)::before {
+        position: absolute;
+        margin-left: -2rem;
+        display: inline;
+        font-weight: bold;
+        content: counter(my-counter, upper-alpha);
+      }
+    }
+
+    &:nth-child(1) {
+      a:nth-child(1)::before { content: '.'}
+    }
+
+    &:nth-child(2) {
+      counter-reset: my-counter A;
+      counter-increment: my-counter;
+    }
+  }
+
+
+  @media only screen and (max-width: 992px) {
+
+    .skills {
+      max-height: unset;
+      min-height: 250px;
+      flex-wrap: none;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+
+    > .gallery {
+      min-width: 250px;
+      border: 1px solid $light-gray;
+    }
+  }
+}
+

@@ -1,0 +1,15 @@
+.tags {
+
+  > li {
+    display: inline-block;
+    margin-top: 4px;
+    margin-right: 4px;
+    border-radius: 4px;
+    padding: 4px 8px;
+    background-color: black;
+    color: #e7e7e7;
+
+    &:nth-child(3) { background-color: #454545; }
+    &:nth-child(4) { background-color: #7f7f7f; }
+  }
+}
